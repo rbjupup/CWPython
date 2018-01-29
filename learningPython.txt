@@ -1,0 +1,115 @@
+四则运算：
+13+1 13-1 13*1 13/1 13%1
+
+变量： 
+different = 1 different = different - 10 different
+
+函数： 
+dev mill（min,max）:
+    return min - max
+注意，return前面4个空格
+
+内置函数使用：
+abs（-4） pow(2,4) round(4.8) int(4.8) str(1234)
+
+字符串表示：双单或者双双引号
+"hello wrold"
+'hello wrold'
+"hello"+" wrold"
+"hello" + " 123"+str(4)+" wrold"
+"PYTHON "*3
+"Python\t better than php\nyeap"好像还是会这样显示，只有输出到文件中才看得到效果
+zifuchuan = '''我是
+多行
+字符串
+'''
+long = 10
+print(long,"个"，zifuchuan)
+print("i have %d apple i ate %d" %(long,long))
+
+//使用模块的方法
+import math
+help(math)
+math.sqrt(9)
+
+//定义模块的方法
+将以下两个函数放入自己的模块中（temp.py）
+def to_celsius(t):
+    return (t - 32.0) * 5.0 / 9.0
+def above_freezing(t):
+    return t > 0
+然后将该文件拷贝到3.5的执行目录下面
+之后就可以import temp了
+（或者在wing 101 里面打开也可以）
+
+关于模块的main：
+在py中假如这行代码
+print("echo:__name__ is",__name__)
+在wing101运行时输出的是
+echo:__name__ is __main__
+import时输出的是
+echo:__name__ is temp
+
+文档帮助的书写，以下以那个温度的py文件为例
+'''help....'''
+def to_celsius(t):
+    '''help fun1....'''
+    return (t - 32.0) * 5.0 / 9.0
+def above_freezing(t):
+    '''help fun2....'''
+    return t > 0
+没法用中文我也是醉了，要看到帮助信息只需要help（temp）
+
+对象与方法
+'smile'.capitalize()
+55页常用字符串方法
+
+安装其它模块参照opencv的安装方法
+https://jingyan.baidu.com/album/25648fc1916ebc9191fd00dd.html?picindex=5
+关于书中的 import media 找了许多资料之后才知道python3无法使用PIL，所以，我们使用一个新的模块 pillow，命令行用pip install pillow就能安装
+安装pillow后PIE的使用方法是
+from PIL import Image
+im=Image.open("D:\\test.bmp")
+print(im.format,' ',im.size,' ',im.mode)
+
+测试相关：
+使用nose进行测试，测试方法是先编写一个文件叫test_temp.py
+然后运行
+测试模板请查看我放github的代码
+测试准则是：测试负，正，边缘条件
+
+列表
+赋值：group = [5，4，3，2，'bingo'，2，3，4，5]
+取值：group[4]
+逆向取值：group[-4](倒数第一个元素为group[-1])
+列表是异构的
+列表的操作
+len(group) min()max()sum [1,2,3]+[4]
+列表的循环
+for i in group
+    print i
+列表的切片groupcopy = group[0:3] = group[:3]
+别名 对groupcopy中的元素处理的时候group中的元素也会改变
+列表方法：85页
+元组（）元组创建后，包含的引用就不能修改了，但是值可以修改
+读取文件 open（“data.txt”,"r"）
+注释#
+布尔 True Flase not True and or
+
+if 1：
+    block
+elif 2：
+    block
+else：
+    block
+
+range（）创建一个1-10这样的列表所以有如下循环表示法
+for i in range（0，100）：
+    group[i] = i
+for i in range(len(group)):
+    group[i] = i
+
+enumerate(group) = groupnew[[0,group[0]],...]
+
+while condition:
+    block

@@ -92,7 +92,11 @@ for i in group
 别名 对groupcopy中的元素处理的时候group中的元素也会改变
 列表方法：85页
 元组（）元组创建后，包含的引用就不能修改了，但是值可以修改
-读取文件 open（“data.txt”,"r"）
+读取文件 
+file = open（“data.txt”,"w"）
+file.write("hello wrold python")
+file.close
+
 注释#
 布尔 True Flase not True and or
 
@@ -113,3 +117,20 @@ enumerate(group) = groupnew[[0,group[0]],...]
 
 while condition:
     block
+
+集合和字典
+set（（2，3，5））
+set（[2,3,5]）
+集合中的元素不会有重复
+集合可以进行与或非159:例程
+lows = set([0,1,2,3,4])
+odds = set([1,3,5,7,9])
+lows.add(9)
+low.difference(odds)                                                                                                                                                                                            
+hash()
+哈希值
+
+字典的优势
+字典的优势在于,假如我们有一堆数据,使用编号作为索引,那么当我们要查找一个人名的时候,
+需要将全部数据遍历一次,查找人名,但是使用字典的话,用人名做索引,查找起来就很快,直接从
+首字母开始查找.

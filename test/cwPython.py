@@ -119,7 +119,14 @@ def show_bubble(L):
                 L[j] , L[j + 1] = L[j + 1] , L[j] 
             j = j + 1
         i = i - 1
-        
+def show_max_sort(L):
+    i = len(L) - 1
+    #找出最大的,交换位置
+    while i != 0 :
+        max_index = count.index(max(L[:i]))
+        L[max_index],L[i] = L[i],L[max_index]
+        i = i - 1
+
 def insertion_sort(L):
     i = 0
     while i != len(L):
@@ -224,7 +231,7 @@ def GUI_program():
 def show_time():
     '''import time at first'''
     time_start=time.time()
-    cwclass.var_label_example()
+    cwclass.Look_feel_example()
     time_end=time.time()
     print('totally cost',time_end-time_start)   
 

@@ -231,7 +231,7 @@ def GUI_program():
 def show_time():
     '''import time at first'''
     time_start=time.time()
-    cwclass.Look_feel_example()
+    cwclass.ctl_menu_example()
     time_end=time.time()
     print('totally cost',time_end-time_start)   
 

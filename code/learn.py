@@ -1,16 +1,21 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+'''help....'''
+import re
+import nose
+
 import time
 import random
 import bisect
-from cwclass import *
 
-from tkinter import *
 def show_list():
+    '''列表的新建和添加'''
     mylist = [1,2,3,4]
     mylist.append(5)
     print(mylist)
     
 def show_set():
-    '''this funtion show you how to create a set'''
+    '''集合的创建和集合之间的运算,集合是括号'''
     setres = set([1,2,3,4])
     print(setres)
     setres2 = set((1,2,3,4,5))
@@ -22,12 +27,13 @@ def show_set():
         union| symmetric_difference^'''
 
 def show_hash():
-    '''this funtion show you how to use hash '''
+    '''散列表的计算'''
     help(hash)
     hash(123)
     hash('123') 
     
 def show_dictionary():
+    '''字典的例程'''
     highschool = {}
     highschool['wuzenan'] = ['qiaozhong','class 5','class 11']
     highschool['chenweikun'] = ['dazhong','unknow']
@@ -41,8 +47,7 @@ def show_dictionary():
     '''member'''
     '''clear get key item values update'''
 def show_getminmether():
-    '''this function show you how to use a lessful algorithm 
-    to get min index'''
+    '''找出列表中的最小值'''
     count = [8,6,4,7,55,799,454,353,354,745,223]
     low = min(count)
     min_index = count.index(low)
@@ -111,6 +116,7 @@ def show_sort(L):
         i = i + 1
         
 def show_bubble(L):
+    '''冒泡排序法'''
     i = len(L)
     while i != 2:
         j = 0
@@ -119,20 +125,21 @@ def show_bubble(L):
                 L[j] , L[j + 1] = L[j + 1] , L[j] 
             j = j + 1
         i = i - 1
+        
 def show_max_sort(L):
+    '''每次找最大值排序'''
     i = len(L) - 1
-    #�ҳ�����,����λ��
     while i != 0 :
         max_index = count.index(max(L[:i]))
         L[max_index],L[i] = L[i],L[max_index]
         i = i - 1
 
 def insertion_sort(L):
+    '''插入排序'''
     i = 0
     while i != len(L):
         insert(L,i)
         i = i + 1
-        
 def insert(L,b):
     i = b 
     while i != 0 and L[i - 1] >= L[b]:
@@ -142,12 +149,14 @@ def insert(L,b):
     L.insert(i,value)
     
 def bin_sort(L):
+    '''二分排序'''
     result = []
     for v in L:
         bisect.insort_left(result,v)
     return result
 
 def show_merge(L):
+    '''合并排序'''
     result = []
     tmp = []
     
@@ -184,10 +193,12 @@ def merge(L1,L2):
     return result
 
 def smile(way1 = 'haha',way2 = 'xixi'):
+    '''参数默认值'''
     print(way1,way2)
     raise ValueError("just a joy")
     
 def out_max(*value):
+    '''输出最大值****测试'''
     if not value:
         return None
     m = value[0]
@@ -197,9 +208,7 @@ def out_max(*value):
     return m
 
 class Color(object):
-    r = 0
-    g = 0
-    b = 0
+    '''定义类'''
     def init_white(self):
         self.r = 255
         self.b = 255
@@ -213,7 +222,9 @@ class Color(object):
         self.g + other.g,
         self.b + other.b)
 class CwColor(Color):
+    '''类的继承'''
     pass
+
 def show_color():
     red = Color(255,0,0)
     white = Color(0,0,0)
@@ -222,23 +233,16 @@ def show_color():
     print(red.g)
 
 def GUI_program():
+    '''控件例程,显示一个label'''
     window = Tk()
     label = Label(window,text = "hello wrold")
     label.pack()
     window.mainloop()
 #show_searchanndsort end
-    
-def show_time():
-    '''import time at first'''
-    time_start=time.time()
-    cwclass.ctl_menu_example()
-    time_end=time.time()
-    print('totally cost',time_end-time_start)   
 
-if __name__ == '__main__':
-    show_time()
-    
-    
-#import nose
-#if __name__ == '__main__':
-#    nose.runmodule()
+def to_celsius(t):
+    '''help fun1....'''
+    return (t - 32.0) * 5.0 / 9.0
+def above_freezing(t):
+    '''help fun2....'''
+    return t > 0
